@@ -1,0 +1,83 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+#calculator-container {
+  background-color: #EEE;
+  padding: 20px;
+  border: 2px solid grey;
+  border-radius: 10pt;
+
+  #display {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    padding: 10pt;
+    border-radius: 5pt;
+    min-width: 50vw;
+    font-size: x-large;
+    min-height: 70px;
+  }
+
+  #controls {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    border-radius: 10px;
+    border: 2px solid black;
+    overflow: hidden;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16pt;
+      background-color: lightgrey;
+      font-size: x-large;
+      border: 0.25px solid black;
+    }
+    div:hover {
+      opacity: 0.5;
+    }
+
+    .calc-clear {
+      background-color: orange;
+    }
+    .calc-operation {
+      background-color: #BBB;
+    }
+    .calc-equals {
+      background-color: lightblue;
+    }
+  }
+}
+
+// Grid classes
+@for $i from 1 through 4 {
+  .col-start-#{$i} {
+    grid-column-start: $i;
+  }
+}
+@for $i from 1 through 4 {
+  .col-end-#{$i} {
+    grid-column-end: $i + 1;
+  }
+}
+
+@for $j from 1 through 5 {
+  .row-start-#{$j} {
+    grid-row-start: $j;
+  }
+}
+@for $j from 1 through 5 {
+  .row-end-#{$j} {
+    grid-row-end: $j + 1;
+  }
+}
